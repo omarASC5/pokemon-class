@@ -15,6 +15,7 @@
 	}
 	attackOpponent(Pokemon) {
 		let DAMAGE;
+		// If the Pokemon has more defense than the attack --> Take no damage
 		 ((Pokemon.defense > this.attack) || (Pokemon.defense === this.attack)) ?
 			DAMAGE = 0 : DAMAGE = (this.attack - Pokemon.defense);
 
@@ -24,10 +25,3 @@
 		return `${this.name.toUpperCase()} (${this.type.toUpperCase()}) ${this.health}/${this.startingHealth}`;
 	}
  }
-
- const charmander = new Pokemon("charmander", 12, 8, 30, "fire");
- console.log(charmander.name);    // charmander
- console.log(charmander.attack);  // 12
- console.log(charmander.defense); // 8
- console.log(charmander.health);  // 30
- console.log(charmander.type);    // fire
